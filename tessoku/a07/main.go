@@ -15,6 +15,9 @@ func main() {
 		fmt.Scan(&r)
 
 		b[l-1]++
+		if r >= d {
+			continue
+		}
 		b[r]--
 	}
 
