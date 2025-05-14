@@ -10,10 +10,10 @@ func main() {
 	m := make([][]int, h+1)
 	m[0] = make([]int, w+1)
 
-	for i := 1; i < h; i++ {
+	for i := 1; i <= h; i++ {
 		var hrz int
 		m[i] = make([]int, w+1)
-		for j := 1; j < w; j++ {
+		for j := 1; j <= w; j++ {
 			var v int
 			fmt.Scan(&v)
 			hrz += v
@@ -21,8 +21,8 @@ func main() {
 		}
 	}
 
-	for i := 2; i < h; i++ {
-		for j := 1; j < w; j++ {
+	for i := 2; i <= h; i++ {
+		for j := 1; j <= w; j++ {
 			m[i][j] = m[i-1][j] + m[i][j]
 		}
 	}
