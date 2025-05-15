@@ -1,13 +1,9 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	var h, w, n int
-	fmt.Scan(&h)
-	fmt.Scan(&w)
+	var n int
 	fmt.Scan(&n)
 
 	x := make([][]int, 1502)
@@ -21,35 +17,37 @@ func main() {
 		fmt.Scan(&b)
 		fmt.Scan(&c)
 		fmt.Scan(&d)
+
 		x[a][b]++
-		x[a][d+1]--
-		x[c+1][b]--
-		x[c+1][d+1]++
+		x[a][d]--
+		x[c][b]--
+		x[c][d]++
 	}
 
-	for i := 1; i <= h; i++ {
+	for i := 0; i <= 1501; i++ {
 		hrz := 0
-		for j := 1; j <= w; j++ {
+		for j := 0; j <= 1501; j++ {
 			hrz += x[i][j]
 			x[i][j] = hrz
 		}
 	}
 
-	for j := 1; j <= w; j++ {
+	for j := 0; j <= 1501; j++ {
 		vrt := 0
-		for i := 1; i <= h; i++ {
+		for i := 0; i <= 1501; i++ {
 			vrt += x[i][j]
 			x[i][j] = vrt
 		}
 	}
 
-	for i := 1; i <= h; i++ {
-		for j := 1; j <= w; j++ {
-			if j > 1 {
-				fmt.Print(" ")
+	ans := 0
+	for i := 0; i <= 1501; i++ {
+		for j := 0; j <= 1501; j++ {
+			if x[i][j] > 0 {
+				ans++
 			}
-			fmt.Print(x[i][j])
 		}
-		fmt.Println("")
 	}
+	fmt.Println(ans)
+
 }
