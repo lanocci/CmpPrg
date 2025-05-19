@@ -15,14 +15,12 @@ func main() {
 	sort.Slice(a, func(i, j int) bool {
 		return a[i] < a[j]
 	})
-	fmt.Println(a)
 	fmt.Scan(&q)
 	for i := 0; i < q; i++ {
 		var x int
 		fmt.Scan(&x)
-		ans := sort.Search(n, func(j int) bool {
+		fmt.Println(sort.Search(n, func(j int) bool {
 			return a[j] >= x
-		})
-		fmt.Println(ans)
+		}))
 	}
 }
