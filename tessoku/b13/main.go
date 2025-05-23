@@ -14,7 +14,7 @@ func main() {
 
 	r := make([]int, n)
 
-	for i := 0; i < n-1; i++ {
+	for i := 0; i < n; i++ {
 		tmp := 0
 		for j := i; j < n; j++ {
 			if i == j {
