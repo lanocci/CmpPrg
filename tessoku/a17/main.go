@@ -37,7 +37,7 @@ func main() {
 	}
 
 	fmt.Println(c)
-	for j := c; j >= 0; j-- {
+	for j := c - 1; j >= 0; j-- {
 		fmt.Print(p[j])
 		if j > 0 {
 			fmt.Print(" ")
