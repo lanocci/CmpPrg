@@ -18,7 +18,7 @@ func main() {
 			if i > 0 && j > 0 && s[i-1] == t[j-1] {
 				prev := math.Max(float64(dp[i][j-1]), float64(dp[i][j]))
 				dp[i][j] = int(math.Max(float64(dp[i-1][j-1]+1), prev))
-			} else if i > 0 || j > 0 {
+			} else if i > 0 && j > 0 {
 				dp[i][j] = int(math.Max(float64(dp[i-1][j]), float64(dp[i][j-1])))
 			}
 		}
