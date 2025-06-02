@@ -16,7 +16,7 @@ func main() {
 	dp := make([][]int, n+1)
 	max := 0
 	for i := 0; i <= n; i++ {
-		dp[i] = make([]int, 2)
+		dp[i] = make([]int, w+1)
 		dp[i][0] = 0
 		for j := 1; j <= w; j++ {
 			if i == 0 {
