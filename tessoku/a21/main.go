@@ -8,15 +8,15 @@ import (
 func main() {
 	var n int
 	fmt.Scan(&n)
-	p := make([]int, n+1)
-	a := make([]int, n+1)
+	p := make([]int, n+2)
+	a := make([]int, n+2)
 	for i := 1; i <= n; i++ {
-		fmt.Scan(&p)
-		fmt.Scan(&a)
+		fmt.Scan(&p[i])
+		fmt.Scan(&a[i])
 	}
-	dp := make([][]int, n+1)
-	for i := 0; i <= n; i++ {
-		dp[i] = make([]int, n+1)
+	dp := make([][]int, n+2)
+	for i := 0; i <= n+1; i++ {
+		dp[i] = make([]int, n+2)
 	}
 	dp[1][n] = 0
 	for len := n - 2; len >= 0; len-- {
